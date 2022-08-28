@@ -1,6 +1,7 @@
 # Go RestApi
 
-Go ile rest api programlamak [fiber](https://github.com/gofiber/fiber) kütüphanesi ile aşırı kolay ve kapsamlı.
+Go ile rest api programlamak [fiber](https://github.com/gofiber/fiber) kütüphanesi ile aşırı kolay ve kapsamlı. 
+Bu repo tamamen eğitim amaçlı yazılmıştır. Genel hatlarıyla rest api kavramından da söz edildi. Status kodlar, rest api methodları ve handler kavramları işlendi. 
 
 ## içerik 
 
