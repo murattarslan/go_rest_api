@@ -4,26 +4,26 @@ Go ile rest api programlamak [fiber](https://github.com/gofiber/fiber) kütüpha
 
 ## içerik 
 
-- [Test ortamı](https://github.com/murattarslan/go_router/master?readme=1#test-ortam%C4%B1-kurma)
-- Router kurulumu ve dinleme(https://github.com/murattarslan/go_router/master?readme=1#router-kurulumu-ve-dinleme)
-- RestApi fonksiyon tipleri
-  - Get
-  - Post
-  - Put
-  - Del
-- İstekten veri alma yöntemleri
-  - Params
-  - Body
-  - Query
-- Sık kullanılan status kodları
-  - 200 OK
-  - 201 Created
-  - 400 Bad Request
-  - 401 Unauthorized
-  - 403 Forbidden
-  - 404 Not Found
-  - 500 Internal Server Error
-  - 503 Service Unavailable
+- [Test ortamı](https://github.com/murattarslan/go_rest_api/tree/master#test-ortam%C4%B1-kurma)
+- [Router kurulumu ve dinleme](https://github.com/murattarslan/go_rest_api/tree/master#router-kurulumu-ve-dinleme)
+- [RestApi fonksiyon tipleri](https://github.com/murattarslan/go_rest_api/tree/master#restapi-fonksiyon-tipleri)
+  - [Get](https://github.com/murattarslan/go_rest_api/tree/master#get)
+  - [Post](https://github.com/murattarslan/go_rest_api/tree/master#post)
+  - [Put](https://github.com/murattarslan/go_rest_api/tree/master#put)
+  - [Del](https://github.com/murattarslan/go_rest_api/tree/master#del)
+- [İstekten veri alma yöntemleri](https://github.com/murattarslan/go_rest_api/tree/master#i%CC%87stekten-veri-alma-y%C3%B6ntemleri)
+  - [Params](https://github.com/murattarslan/go_rest_api/tree/master#params)
+  - [Body](https://github.com/murattarslan/go_rest_api/tree/master#body)
+  - [Query](https://github.com/murattarslan/go_rest_api/tree/master#query)
+- [Sık kullanılan status kodları](https://github.com/murattarslan/go_rest_api/tree/master#s%C4%B1k-kullan%C4%B1lan-status-kodlar%C4%B1)
+  - [200 OK](https://github.com/murattarslan/go_rest_api/tree/master#200-ok)
+  - [201 Created](https://github.com/murattarslan/go_rest_api/tree/master#201-created)
+  - [400 Bad Request](https://github.com/murattarslan/go_rest_api/tree/master#400-bad-request)
+  - [401 Unauthorized](https://github.com/murattarslan/go_rest_api/tree/master#401-unauthorized)
+  - [403 Forbidden](https://github.com/murattarslan/go_rest_api/tree/master#403-forbidden)
+  - [404 Not Found](https://github.com/murattarslan/go_rest_api/tree/master#404-not-found)
+  - [500 Internal Server Error](https://github.com/murattarslan/go_rest_api/tree/master#500-internal-server-error)
+  - [503 Service Unavailable](https://github.com/murattarslan/go_rest_api/tree/master#503-service-unavailable)
   
 ### Test ortamı kurma
 
