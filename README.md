@@ -175,14 +175,58 @@ func getBase(c *fiber.Ctx) error {
   ```
   
 ### Sık kullanılan status kodları
-  #### 200 OK
-  #### 201 Created
-  #### 400 Bad Request
-  #### 401 Unauthorized
-  #### 403 Forbidden
-  #### 404 Not Found
-  #### 500 Internal Server Error
-  #### 503 Service Unavailable
+
+Rest api konusunda response kadar önemli bir diğer husus status code yapısıdır. 
+Bu kodlar dikkate alınmadan 200 kodu ile response verebilir mi? cevap evet. Ama client sadece bu kodlara bakarak response body kontrolüne gerek bile duymadan işlem yapabilir. 
+
+Status code [fiber](https://github.com/gofiber/fiber) kütüphanesinde iki şekilde verilebilir.
+1. Status()
+ ```
+ return c.Status(500).SendString(string(err.Error()))
+ 
+ ```
+ Bu yöntemde response göndermeden önce status kod ekliyoruz.
+ 
+2. SendStatus()
+ ```
+ c.SendStatus(500)
+ return c.SendString(string(err.Error()))
+ ```
+ Bu yöntemde ise status kod ayrı response ayrı gönderiliyor.
+ 
+Aşağıda en sık kullanılan bir kaç status kodu inceledik.
+
+  ##### 200 OK
+  En sık kullanılan status koddur. servis görevi başarıyla yaptığını bu kod ile bildirir.
+  
+  ##### 201 Created
+  Bir post metodu ile başarılı şekilde obje oluşturulduğunda verilen status kodudur. Response kısmında oluşturulan objenin bir referansı verilir.
+  
+  ##### 400 Bad Request
+  Fonnksiyonun doğru çalışabilmesi için gerekli parametrelerde herhangi bir eksikliğin veya yanlışlığın olması durumunda kullanılır.
+  
+  ##### 401 Unauthorized
+  Servis istekte bulunan istemcinin kimliğini doğrulayamadığında kullanılır. Login gerektiren client programlarda karşılaşılır ve istemci bu hatayı aldığında kullanıcıyı tekrar login olmaya zorlar.
+  
+  ##### 403 Forbidden
+  Kullanıcının kimliği doğrulanabiliyor ama yetkisi bu işlem için yeterli değilse kullanılan status kodudur.
+  
+  ##### 404 Not Found
+  Gelen isteğin bulunamaması durumunda kullanılan status koddur. Default olarak bu tepki veriliyorken özelleştirmek de mümkündür.
+  
+  ```
+	app.Use(func(c *fiber.Ctx) error {
+		response := fmt.Sprintf("%s%s is not found =(", c.BaseURL(), c.OriginalURL())
+		return c.Status(404).SendString(response)
+	})
+  ```
+⚠️ Dikkat ⚠️ bu yöntemi kullanmak istiyorsanız tüm servislerin en altına yazmalısınız. Aksi halde tüm isteklerden 404 alabilirsiniz. 👍
+  
+  ##### 500 Internal Server Error
+  Sunucu en basit anlamda bir hata dolayısıyla çalışamazsa bu kod kullanılır. Bu tip hata kodu genellikle sunucudaki fonksiyonlardan kaynaklıdır.
+  
+  ##### 503 Service Unavailable
+  'Sunucu geçici süreyle çevrimdışıdır. Sabrınız için teşekkürler' gibi hataları muhtemelen görmüşsünüzdür. İşte o hatanın kodu.
  
  
  
